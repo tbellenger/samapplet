@@ -1,0 +1,2211 @@
+// converted by version 1.2
+// on Tue May 15 16:09:28 EST 2012
+
+.package com/abnote/javacard/SAM {
+	.aid 0xA0:0x0:0x0:0x0:0x62:0x3:0x1:0xC:0x1;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.0;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.1;		//javacard/security
+		0xA0:0x0:0x0:0x0:0x62:0x2:0x1 1.1;		//javacardx/crypto
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x62:0x3:0x1:0xC:0x1:0x1 SAM;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte[] Password/password;
+		// 1
+		instanceFieldRef boolean Password/used;
+		// 2
+		instanceFieldRef boolean SAM/zmkLoadingLocked;
+		// 3
+		instanceFieldRef boolean[] SAM/transientBools;
+		// 4
+		instanceFieldRef byte[] SAM/transientCryptoArea;
+		// 5
+		instanceFieldRef byte[] SAM/transientTemporaryStorage;
+		// 6
+		instanceFieldRef byte[] SAM/transientKeyStorage;
+		// 7
+		instanceFieldRef 2.10 SAM/transientDESKey;
+		// 8
+		instanceFieldRef 3.1 SAM/cipherTDES_CBC;
+		// 9
+		instanceFieldRef 3.1 SAM/cipherTDES_ECB;
+		// 10
+		instanceFieldRef 1.9 SAM/pin;
+		// 11
+		instanceFieldRef byte[] SAM/zmkStorage;
+		// 12
+		instanceFieldRef Password[] SAM/passwordStorage;
+		// 13
+		staticMethodRef 2.13.0(BSZ)Ljavacard/security/Key;;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+			.descriptor	Ljavacard/security/Key;	2.0;
+
+		// 14
+		classRef 2.10;		// javacard/security/DESKey
+		// 15
+		staticMethodRef 1.8.12(SB)[Z;		// javacard/framework/JCSystem.makeTransientBooleanArray(SB)[Z
+		// 16
+		staticMethodRef 3.1.0(BZ)Ljavacardx/crypto/Cipher;;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+			.descriptor	Ljavacardx/crypto/Cipher;	3.1;
+
+		// 17
+		staticMethodRef 1.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 18
+		staticMethodRef 1.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 19
+		classRef 1.9;		// javacard/framework/OwnerPIN
+		// 20
+		staticMethodRef 1.9.0(BB)V;		// javacard/framework/OwnerPIN.<init>(BB)V
+		// 21
+		staticMethodRef 1.16.2([BS[BSS)S;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+		// 22
+		virtualMethodRef 1.9.8([BSB)V;		// javacard/framework/OwnerPIN.update([BSB)V
+		// 23
+		staticMethodRef 1.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 24
+		classRef Password;
+		// 25
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 26
+		virtualMethodRef 1.3.1()V;		// javacard/framework/Applet.register()V
+		// 27
+		staticMethodRef Password/<init>()V;
+		// 28
+		classRef SAM;
+		// 29
+		staticMethodRef SAM/<init>([BSB)V;
+		// 30
+		virtualMethodRef 1.9.5()V;		// javacard/framework/OwnerPIN.reset()V
+		// 31
+		virtualMethodRef 1.10.1()[B;		// javacard/framework/APDU.getBuffer()[B
+		// 32
+		staticMethodRef SAM/loadZMKComponent(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 33
+		staticMethodRef SAM/loadKey(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 34
+		staticMethodRef SAM/lockZMKLoading(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 35
+		staticMethodRef SAM/diversifyKey(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 36
+		staticMethodRef SAM/calculateSessionKey(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 37
+		staticMethodRef SAM/calculateSessionKeySCP02(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 38
+		staticMethodRef SAM/calculateCryptogram(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 39
+		staticMethodRef SAM/calculateMAC(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 40
+		staticMethodRef SAM/encryptUnderKek(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 41
+		staticMethodRef SAM/getStatus(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 42
+		staticMethodRef SAM/verifyPIN(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 43
+		staticMethodRef SAM/updatePIN(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 44
+		staticMethodRef SAM/storePassword(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 45
+		staticMethodRef SAM/retrPassword(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 46
+		staticMethodRef SAM/version(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 47
+		staticMethodRef SAM/debug1(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 48
+		staticFieldRef byte[] SAM/VERSION;
+		// 49
+		virtualMethodRef 1.10.8(SS)V;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+		// 50
+		virtualMethodRef 1.10.6()S;		// javacard/framework/APDU.setIncomingAndReceive()S
+		// 51
+		virtualMethodRef 1.9.4()Z;		// javacard/framework/OwnerPIN.isValidated()Z
+		// 52
+		virtualMethodRef Password/delete()V;
+		// 53
+		virtualMethodRef Password/store([BB)V;
+		// 54
+		virtualMethodRef Password/getPassword()[B;
+		// 55
+		staticMethodRef SAM/xorArray([BS[BS[BSS)V;
+		// 56
+		virtualMethodRef 3.1.3(Ljavacard/security/Key;B)V;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	2.0;
+
+		// 57
+		staticFieldRef byte[] SAM/ZERO_8_ARRAY;
+		// 58
+		virtualMethodRef 3.1.1([BSS[BS)S;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+		// 59
+		virtualMethodRef 1.9.1([BSB)Z;		// javacard/framework/OwnerPIN.check([BSB)Z
+	}
+
+	.class public Password 0 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private byte[] password 0;		// [B
+			private boolean used 1;		// Z
+			private static final byte LENGTH_BUFFER = 25;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			store([BB)V;
+			delete()V;
+			getPassword()[B;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 25;		// java/lang/Object.<init>()V
+					aload_0;
+					bspush 25;
+					newarray 11;
+					putfield_a 0;		// reference com/abnote/javacard/SAM/Password.password
+					aload_0;
+					sconst_0;
+					putfield_b 1;		// boolean com/abnote/javacard/SAM/Password.used
+					return;
+		}
+
+		.method public store([BB)V 1 {
+			.stack 5;
+			.locals 0;
+
+				L0:	getfield_b_this 1;		// boolean com/abnote/javacard/SAM/Password.used
+					ifeq L2;
+				L1:	sspush 27014;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_1;
+					sload_2;
+					getfield_a_this 0;		// reference com/abnote/javacard/SAM/Password.password
+					sconst_0;
+					bspush 25;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_0;
+					sconst_1;
+					putfield_b 1;		// boolean com/abnote/javacard/SAM/Password.used
+					return;
+		}
+
+		.method public delete()V 2 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sconst_0;
+					putfield_b 1;		// boolean com/abnote/javacard/SAM/Password.used
+					return;
+		}
+
+		.method public getPassword()[B 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_b_this 1;		// boolean com/abnote/javacard/SAM/Password.used
+					ifne L2;
+				L1:	sspush 27014;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 0;		// reference com/abnote/javacard/SAM/Password.password
+					areturn;
+		}
+
+	}
+
+	.class public SAM 1 extends 1.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			private boolean[] transientBools 0;		// [Z
+			private byte[] transientKeyStorage 1;		// [B
+			private byte[] transientCryptoArea 2;		// [B
+			private byte[] transientTemporaryStorage 3;		// [B
+			private 2.10 transientDESKey 4;		// Ljavacard/security/DESKey;
+			private 3.1 cipherTDES_CBC 5;		// Ljavacardx/crypto/Cipher;
+			private 3.1 cipherTDES_ECB 6;		// Ljavacardx/crypto/Cipher;
+			private 1.9 pin 7;		// Ljavacard/framework/OwnerPIN;
+			private byte[] zmkStorage 8;		// [B
+			private Password[] passwordStorage 9;		// [Lcom/abnote/javacard/SAM/Password;
+			private boolean zmkLoadingLocked 10;		// Z
+			private static final byte[] VERSION = {0,0,1};		// [B
+			private static final byte CLA_SAM = -128;		// B
+			private static final byte INS_LOAD_ZMK_COMPONENT = 64;		// B
+			private static final byte INS_LOAD_KEY = 66;		// B
+			private static final byte INS_LOCK_ZMK_LOADING = 68;		// B
+			private static final byte INS_DIVERSIFY_KEY = 70;		// B
+			private static final byte INS_CALCULATE_SESSION_KEY = 72;		// B
+			private static final byte INS_CALCULATE_SESSION_KEY_SCP02 = 73;		// B
+			private static final byte INS_CALCULATE_CRYPTOGRAM = 81;		// B
+			private static final byte INS_CALCULATE_MAC = 82;		// B
+			private static final byte INS_ENCRYPT_UNDER_KEK = 83;		// B
+			private static final byte INS_GET_STATUS = 84;		// B
+			private static final byte INS_VERIFY_PIN = 32;		// B
+			private static final byte INS_UPDATE_PIN = 34;		// B
+			private static final byte INS_STORE_PASSWORD = -127;		// B
+			private static final byte INS_RETR_PASSWORD = -126;		// B
+			private static final byte INS_VERSION = -112;		// B
+			private static final byte INS_DEBUG1 = -128;		// B
+			private static final byte MAX_ZMK_KEYS = 10;		// B
+			private static final byte MAX_KEYS = 6;		// B
+			private static final byte MAX_PIN_SIZE = 8;		// B
+			private static final short LENGTH_ZMK_STORAGE = 190;		// S
+			private static final byte LENGTH_KEY_STORAGE = 120;		// B
+			private static final byte LENGTH_PASSWORD_STORAGE = 32;		// B
+			private static final byte LENGTH_CRYPTO_AREA = 16;		// B
+			private static final byte LENGTH_TEMP_STORAGE = 32;		// B
+			private static final byte LENGTH_ZMK = 16;		// B
+			private static final byte LENGTH_ZMK_KCV = 3;		// B
+			private static final byte LENGTH_KEY = 16;		// B
+			private static final byte LENGTH_KCV = 3;		// B
+			private static final byte LENGTH_CRYPTOGRAM = 8;		// B
+			private static final byte LENGTH_KEYTYPE = 1;		// B
+			private static final byte LENGTH_KEYBLOCK = 20;		// B
+			private static final byte[] ZERO_8_ARRAY = {0,0,0,0,0,0,0,0};		// [B
+			private static final byte OFFSET_ZMK = 0;		// B
+			private static final byte OFFSET_ZMK_KCV = 16;		// B
+			private static final byte OFFSET_KEYTYPE = 0;		// B
+			private static final byte OFFSET_KEY = 1;		// B
+			private static final byte OFFSET_KCV = 17;		// B
+			private static final byte KEYTYPE_ENC = 0;		// B
+			private static final byte KEYTYPE_MAC = 1;		// B
+			private static final byte KEYTYPE_KEK = 2;		// B
+			private static final byte KEYTYPE_ZMK = 15;		// B
+			private static final byte KEYTYPE_MASK_SESSION = 16;		// B
+			private static final byte KEYTYPE_MASK_DERIVED = 32;		// B
+			private static final byte PIN_TRY_LIMIT = 15;		// B
+			private static final short SW_PIN_VERIFICATION_FAILED = 25344;		// S
+			private static final short SW_PIN_VERIFICATION_REQUIRED = 25345;		// S
+			private static final short SW_KCV_INCORRECT = 27016;		// S
+			private static final short SW_NOT_IMPLEMENTED = 27135;		// S
+		}
+
+		.publicMethodTable 4 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method protected <init>([BSB)V 0 {
+			.stack 5;
+			.locals 4;
+
+				L0:	aload_0;
+					invokespecial 23;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					sconst_0;
+					putfield_b 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					aload_0;
+					sconst_3;
+					sconst_2;
+					invokestatic 15;		// javacard/framework/JCSystem.makeTransientBooleanArray(SB)[Z
+					putfield_a 3;		// reference com/abnote/javacard/SAM/SAM.transientBools
+					aload_0;
+					bspush 16;
+					sconst_2;
+					invokestatic 18;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 4;		// reference com/abnote/javacard/SAM/SAM.transientCryptoArea
+					aload_0;
+					bspush 32;
+					sconst_2;
+					invokestatic 18;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					aload_0;
+					bspush 120;
+					sconst_2;
+					invokestatic 18;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					aload_0;
+					sconst_2;
+					sspush 128;
+					sconst_0;
+					invokestatic 13;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 14;		// T_CLASSORINTERFACE javacard/security/DESKey
+					putfield_a 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					aload_0;
+					sconst_1;
+					sconst_0;
+					invokestatic 16;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 8;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_CBC
+					aload_0;
+					sconst_5;
+					sconst_0;
+					invokestatic 16;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					aload_0;
+					new 19;		// javacard/framework/OwnerPIN
+					dup;
+					bspush 15;
+					bspush 8;
+					invokespecial 20;		// javacard/framework/OwnerPIN.<init>(BB)V
+					putfield_a 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					aload_1;
+					sload_2;
+					baload;
+					sstore 4;
+					sload_2;
+					sload 4;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 5;
+					sload_2;
+					sload 5;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 6;
+					getfield_a_this 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					sload 6;
+					invokevirtual 22;		// javacard/framework/OwnerPIN.update([BSB)V
+					aload_0;
+					sspush 190;
+					newarray 11;
+					putfield_a 11;		// reference com/abnote/javacard/SAM/SAM.zmkStorage
+					aload_0;
+					bspush 32;
+					anewarray 24;		// com/abnote/javacard/SAM/Password
+					putfield_a 12;		// reference com/abnote/javacard/SAM/SAM.passwordStorage
+					sconst_0;
+					sstore 7;
+					goto L2;
+				L1:	getfield_a_this 12;		// reference com/abnote/javacard/SAM/SAM.passwordStorage
+					sload 7;
+					new 24;		// com/abnote/javacard/SAM/Password
+					dup;
+					invokespecial 27;		// com/abnote/javacard/SAM/Password.<init>()V
+					aastore;
+					sload 7;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 7;
+				L2:	sload 7;
+					getfield_a_this 12;		// reference com/abnote/javacard/SAM/SAM.passwordStorage
+					arraylength;
+					if_scmplt L1;
+				L3:	aload_0;
+					invokevirtual 26;		// javacard/framework/Applet.register()V
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 5;
+			.locals 0;
+
+				L0:	new 28;		// com/abnote/javacard/SAM/SAM
+					dup;
+					aload_0;
+					sload_1;
+					sload_2;
+					invokespecial 29;		// com/abnote/javacard/SAM/SAM.<init>([BSB)V
+					pop;
+					return;
+		}
+
+		.method public select()Z 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sconst_1;
+					sreturn;
+		}
+
+		.method public deselect()V 4 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					invokevirtual 30;		// javacard/framework/OwnerPIN.reset()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 4;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_0;
+					aload_2;
+					sconst_0;
+					baload;
+					bspush -4;
+					sand;
+					bastore;
+					aload_2;
+					sconst_0;
+					baload;
+					ifne L3;
+				L1:	aload_2;
+					sconst_1;
+					baload;
+					bspush -92;
+					if_scmpne L3;
+				L2:	return;
+				L3:	aload_2;
+					sconst_0;
+					baload;
+					bspush -128;
+					if_scmpeq L5;
+				L4:	sspush 28160;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L22 16 -128 L21 -127 L18 -126 L19 -112 L20 32 L16 34 L17 64 L6 66 L7 68 L8 70 L9 72 L10 73 L11 81 L12 82 L13 83 L14 84 L15;
+				L6:	aload_0;
+					aload_1;
+					invokespecial 32;		// com/abnote/javacard/SAM/SAM.loadZMKComponent(Ljavacard/framework/APDU;)V
+					return;
+				L7:	aload_0;
+					aload_1;
+					invokespecial 33;		// com/abnote/javacard/SAM/SAM.loadKey(Ljavacard/framework/APDU;)V
+					return;
+				L8:	aload_0;
+					aload_1;
+					invokespecial 34;		// com/abnote/javacard/SAM/SAM.lockZMKLoading(Ljavacard/framework/APDU;)V
+					return;
+				L9:	aload_0;
+					aload_1;
+					invokespecial 35;		// com/abnote/javacard/SAM/SAM.diversifyKey(Ljavacard/framework/APDU;)V
+					return;
+				L10:	aload_0;
+					aload_1;
+					invokespecial 36;		// com/abnote/javacard/SAM/SAM.calculateSessionKey(Ljavacard/framework/APDU;)V
+					return;
+				L11:	aload_0;
+					aload_1;
+					invokespecial 37;		// com/abnote/javacard/SAM/SAM.calculateSessionKeySCP02(Ljavacard/framework/APDU;)V
+					return;
+				L12:	aload_0;
+					aload_1;
+					invokespecial 38;		// com/abnote/javacard/SAM/SAM.calculateCryptogram(Ljavacard/framework/APDU;)V
+					return;
+				L13:	aload_0;
+					aload_1;
+					invokespecial 39;		// com/abnote/javacard/SAM/SAM.calculateMAC(Ljavacard/framework/APDU;)V
+					return;
+				L14:	aload_0;
+					aload_1;
+					invokespecial 40;		// com/abnote/javacard/SAM/SAM.encryptUnderKek(Ljavacard/framework/APDU;)V
+					return;
+				L15:	aload_0;
+					aload_1;
+					invokespecial 41;		// com/abnote/javacard/SAM/SAM.getStatus(Ljavacard/framework/APDU;)V
+					return;
+				L16:	aload_0;
+					aload_1;
+					invokespecial 42;		// com/abnote/javacard/SAM/SAM.verifyPIN(Ljavacard/framework/APDU;)V
+					return;
+				L17:	aload_0;
+					aload_1;
+					invokespecial 43;		// com/abnote/javacard/SAM/SAM.updatePIN(Ljavacard/framework/APDU;)V
+					return;
+				L18:	aload_0;
+					aload_1;
+					invokespecial 44;		// com/abnote/javacard/SAM/SAM.storePassword(Ljavacard/framework/APDU;)V
+					return;
+				L19:	aload_0;
+					aload_1;
+					invokespecial 45;		// com/abnote/javacard/SAM/SAM.retrPassword(Ljavacard/framework/APDU;)V
+					return;
+				L20:	aload_0;
+					aload_1;
+					invokespecial 46;		// com/abnote/javacard/SAM/SAM.version(Ljavacard/framework/APDU;)V
+					return;
+				L21:	aload_0;
+					aload_1;
+					invokespecial 47;		// com/abnote/javacard/SAM/SAM.debug1(Ljavacard/framework/APDU;)V
+					return;
+				L22:	sspush 27904;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+		.method private version(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					getstatic_a 48;		// reference com/abnote/javacard/SAM/SAM.VERSION
+					sconst_0;
+					aload_2;
+					sconst_0;
+					sconst_3;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					sconst_3;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method private storePassword(Ljavacard/framework/APDU;)V {
+			.stack 3;
+			.locals 5;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 6;
+					getfield_a_this 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					invokevirtual 51;		// javacard/framework/OwnerPIN.isValidated()Z
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 6;
+					bspush 25;
+					if_scmpeq L4;
+				L3:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	sload 4;
+					iflt L6;
+				L5:	sload 4;
+					bspush 31;
+					if_scmple L7;
+				L6:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	sload 5;
+					iflt L9;
+				L8:	sload 5;
+					sconst_1;
+					if_scmple L10;
+				L9:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	sload 5;
+					sconst_1;
+					if_scmpne L12;
+				L11:	getfield_a_this 12;		// reference com/abnote/javacard/SAM/SAM.passwordStorage
+					sload 4;
+					aaload;
+					invokevirtual 52;		// com/abnote/javacard/SAM/Password.delete()V
+				L12:	getfield_a_this 12;		// reference com/abnote/javacard/SAM/SAM.passwordStorage
+					sload 4;
+					aaload;
+					aload_2;
+					sconst_5;
+					invokevirtual 53;		// com/abnote/javacard/SAM/Password.store([BB)V
+					return;
+		}
+
+		.method private retrPassword(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+					getfield_a_this 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					invokevirtual 51;		// javacard/framework/OwnerPIN.isValidated()Z
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 12;		// reference com/abnote/javacard/SAM/SAM.passwordStorage
+					sload_3;
+					aaload;
+					invokevirtual 54;		// com/abnote/javacard/SAM/Password.getPassword()[B
+					astore 4;
+					aload 4;
+					sconst_0;
+					aload_2;
+					sconst_0;
+					bspush 25;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					bspush 25;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method private loadZMKComponent(Ljavacard/framework/APDU;)V {
+			.stack 8;
+			.locals 7;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 6;
+					getfield_b_this 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					sconst_1;
+					if_scmpne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 4;
+					sconst_1;
+					if_scmplt L4;
+				L3:	sload 4;
+					sconst_3;
+					if_scmple L5;
+				L4:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload 5;
+					iflt L7;
+				L6:	sload 5;
+					bspush 10;
+					if_scmplt L8;
+				L7:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	sload 6;
+					bspush 17;
+					if_scmplt L10;
+				L9:	sload 6;
+					bspush 25;
+					if_scmple L11;
+				L10:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	aload_2;
+					bspush 21;
+					baload;
+					sstore 7;
+					sload 4;
+					sconst_1;
+					if_scmpne L13;
+				L12:	aload_2;
+					sconst_5;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					bspush 16;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 3;		// reference com/abnote/javacard/SAM/SAM.transientBools
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 3;		// reference com/abnote/javacard/SAM/SAM.transientBools
+					sconst_1;
+					sconst_0;
+					bastore;
+					goto_w L26;
+				L13:	sload 4;
+					sconst_2;
+					if_scmpne L17;
+				L14:	getfield_a_this 3;		// reference com/abnote/javacard/SAM/SAM.transientBools
+					sconst_0;
+					baload;
+					sconst_1;
+					if_scmpeq L16;
+				L15:	sspush 27014;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	aload_0;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					aload_2;
+					sconst_5;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					bspush 16;
+					bspush 16;
+					invokespecial 55;		// com/abnote/javacard/SAM/SAM.xorArray([BS[BS[BSS)V
+					getfield_a_this 3;		// reference com/abnote/javacard/SAM/SAM.transientBools
+					sconst_1;
+					sconst_1;
+					bastore;
+					goto_w L26;
+				L17:	sload 4;
+					sconst_3;
+					if_scmpne_w L26;
+				L18:	getfield_a_this 3;		// reference com/abnote/javacard/SAM/SAM.transientBools
+					sconst_1;
+					baload;
+					sconst_1;
+					if_scmpeq L20;
+				L19:	sspush 27014;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L20:	aload_0;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					bspush 16;
+					aload_2;
+					sconst_5;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					bspush 16;
+					invokespecial 55;		// com/abnote/javacard/SAM/SAM.xorArray([BS[BS[BSS)V
+					aload_2;
+					bspush 22;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					bspush 16;
+					sload 7;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 3;		// reference com/abnote/javacard/SAM/SAM.transientBools
+					sconst_0;
+					sconst_0;
+					bastore;
+					getfield_a_this 3;		// reference com/abnote/javacard/SAM/SAM.transientBools
+					sconst_1;
+					sconst_0;
+					bastore;
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					aload_2;
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 8;
+					goto L24;
+				L21:	aload_2;
+					sload 8;
+					baload;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					bspush 16;
+					sload 8;
+					sadd;
+					baload;
+					if_scmpeq L23;
+				L22:	sspush 27016;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L23:	sinc 8 1;
+				L24:	sload 8;
+					sload 7;
+					if_scmplt L21;
+				L25:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					getfield_a_this 11;		// reference com/abnote/javacard/SAM/SAM.zmkStorage
+					sload 5;
+					bspush 19;
+					smul;
+					s2b;
+					bspush 16;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_2;
+					sconst_0;
+					getfield_a_this 11;		// reference com/abnote/javacard/SAM/SAM.zmkStorage
+					sload 5;
+					bspush 19;
+					smul;
+					bspush 16;
+					sadd;
+					s2b;
+					sconst_3;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					sconst_3;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+				L26:	return;
+		}
+
+		.method private loadKey(Ljavacard/framework/APDU;)V {
+			.stack 6;
+			.locals 7;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 6;
+					getfield_b_this 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 4;
+					iflt L4;
+				L3:	sload 4;
+					bspush 6;
+					if_scmplt L5;
+				L4:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload 5;
+					iflt L7;
+				L6:	sload 5;
+					bspush 10;
+					if_scmplt L8;
+				L7:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	sload 6;
+					bspush 20;
+					if_scmpeq L10;
+				L9:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	getfield_a_this 11;		// reference com/abnote/javacard/SAM/SAM.zmkStorage
+					sload 5;
+					bspush 19;
+					smul;
+					s2b;
+					getfield_a_this 4;		// reference com/abnote/javacard/SAM/SAM.transientCryptoArea
+					sconst_0;
+					bspush 16;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 11;		// reference com/abnote/javacard/SAM/SAM.zmkStorage
+					sload 5;
+					bspush 19;
+					smul;
+					bspush 16;
+					sadd;
+					s2b;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					sconst_3;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 4;		// reference com/abnote/javacard/SAM/SAM.transientCryptoArea
+					sconst_0;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_3;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 7;
+					goto L14;
+				L11:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 7;
+					baload;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 7;
+					sconst_3;
+					sadd;
+					baload;
+					if_scmpeq L13;
+				L12:	sspush 27016;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	sinc 7 1;
+				L14:	sload 7;
+					sconst_3;
+					if_scmplt L11;
+				L15:	getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_1;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					aload_2;
+					bspush 6;
+					bspush 16;
+					aload_2;
+					bspush 6;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					aload_2;
+					bspush 6;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 8;
+					goto L19;
+				L16:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 8;
+					baload;
+					aload_2;
+					sload 8;
+					sconst_5;
+					sadd;
+					bspush 17;
+					sadd;
+					baload;
+					if_scmpeq L18;
+				L17:	sspush 27016;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L18:	sinc 8 1;
+				L19:	sload 8;
+					sconst_3;
+					if_scmplt L16;
+				L20:	aload_2;
+					sconst_5;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					bspush 20;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method private lockZMKLoading(Ljavacard/framework/APDU;)V {
+			.stack 2;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	getfield_a_this 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					invokevirtual 51;		// javacard/framework/OwnerPIN.isValidated()Z
+					ifeq L2;
+				L1:	aload_0;
+					sconst_1;
+					putfield_b 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					goto L3;
+				L2:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L3:	return;
+		}
+
+		.method private diversifyKey(Ljavacard/framework/APDU;)V {
+			.stack 8;
+			.locals 6;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 6;
+					getfield_b_this 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 4;
+					iflt L4;
+				L3:	sload 4;
+					bspush 6;
+					if_scmplt L5;
+				L4:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload 5;
+					iflt L7;
+				L6:	sload 5;
+					bspush 6;
+					if_scmplt L8;
+				L7:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	sload 6;
+					bspush 16;
+					if_scmpeq L10;
+				L9:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					sadd;
+					s2b;
+					baload;
+					bspush 48;
+					sand;
+					ifeq L12;
+				L11:	sspush 27013;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L12:	getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 7;
+					goto L16;
+				L13:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 7;
+					baload;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 7;
+					sadd;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					if_scmpeq L15;
+				L14:	sspush 27264;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L15:	sinc 7 1;
+				L16:	sload 7;
+					sconst_3;
+					if_scmplt L13;
+				L17:	getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					aload_2;
+					sconst_5;
+					sload 6;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					aload_2;
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					aload_2;
+					sconst_0;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					sconst_3;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					bspush 32;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					sor;
+					bastore;
+					aload_1;
+					sconst_0;
+					sconst_3;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method private calculateSessionKey(Ljavacard/framework/APDU;)V {
+			.stack 8;
+			.locals 6;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 6;
+					getfield_b_this 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 4;
+					iflt L4;
+				L3:	sload 4;
+					bspush 6;
+					if_scmplt L5;
+				L4:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload 5;
+					iflt L7;
+				L6:	sload 5;
+					bspush 6;
+					if_scmplt L8;
+				L7:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	sload 6;
+					bspush 16;
+					if_scmpeq L10;
+				L9:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					sadd;
+					s2b;
+					baload;
+					bspush 16;
+					sand;
+					ifeq L12;
+				L11:	sspush 27013;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L12:	getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 7;
+					goto L16;
+				L13:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 7;
+					baload;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 7;
+					sadd;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					if_scmpeq L15;
+				L14:	sspush 27264;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L15:	sinc 7 1;
+				L16:	sload 7;
+					sconst_3;
+					if_scmplt L13;
+				L17:	getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					aload_2;
+					sconst_5;
+					sload 6;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					aload_2;
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					aload_2;
+					sconst_0;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					sconst_3;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					bspush 16;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					sor;
+					bastore;
+					aload_1;
+					sconst_0;
+					sconst_3;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method private calculateSessionKeySCP02(Ljavacard/framework/APDU;)V {
+			.stack 8;
+			.locals 6;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 6;
+					getfield_b_this 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 4;
+					iflt L4;
+				L3:	sload 4;
+					bspush 6;
+					if_scmplt L5;
+				L4:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload 5;
+					iflt L7;
+				L6:	sload 5;
+					bspush 6;
+					if_scmplt L8;
+				L7:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	sload 6;
+					bspush 16;
+					if_scmpeq L10;
+				L9:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					sadd;
+					s2b;
+					baload;
+					bspush 16;
+					sand;
+					ifeq L12;
+				L11:	sspush 27013;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L12:	getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 7;
+					goto L16;
+				L13:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 7;
+					baload;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 7;
+					sadd;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					if_scmpeq L15;
+				L14:	sspush 27264;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L15:	sinc 7 1;
+				L16:	sload 7;
+					sconst_3;
+					if_scmplt L13;
+				L17:	getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 8;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_CBC
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 8;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_CBC
+					aload_2;
+					sconst_5;
+					sload 6;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					aload_2;
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					aload_2;
+					sconst_0;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					sconst_3;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 5;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					bspush 16;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					sor;
+					bastore;
+					aload_1;
+					sconst_0;
+					sconst_3;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method private calculateCryptogram(Ljavacard/framework/APDU;)V {
+			.stack 7;
+			.locals 6;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 6;
+					getfield_b_this 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 4;
+					iflt L4;
+				L3:	sload 4;
+					bspush 6;
+					if_scmplt L5;
+				L4:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload 5;
+					ifeq L7;
+				L6:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	sload 6;
+					bspush 24;
+					if_scmpeq L9;
+				L8:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					sadd;
+					s2b;
+					baload;
+					sconst_0;
+					sand;
+					ifeq L11;
+				L10:	sspush 27013;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					sadd;
+					s2b;
+					baload;
+					bspush 16;
+					sand;
+					bspush 16;
+					if_scmpeq L13;
+				L12:	sspush 27013;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 7;
+					goto L17;
+				L14:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 7;
+					baload;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 7;
+					sadd;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					if_scmpeq L16;
+				L15:	sspush 27264;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	sinc 7 1;
+				L17:	sload 7;
+					sconst_3;
+					if_scmplt L14;
+				L18:	getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 8;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_CBC
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 8;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_CBC
+					aload_2;
+					sconst_5;
+					sload 6;
+					aload_2;
+					sconst_5;
+					sload 6;
+					sadd;
+					s2b;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sload 6;
+					sadd;
+					bspush 16;
+					sadd;
+					s2b;
+					bspush 8;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method private calculateMAC(Ljavacard/framework/APDU;)V {
+			.stack 6;
+			.locals 6;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 6;
+					getfield_b_this 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload 4;
+					iflt L4;
+				L3:	sload 4;
+					bspush 6;
+					if_scmplt L5;
+				L4:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload 5;
+					ifeq L7;
+				L6:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	sload 6;
+					bspush 24;
+					if_scmpeq L9;
+				L8:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					sadd;
+					s2b;
+					baload;
+					sconst_1;
+					sand;
+					sconst_1;
+					if_scmpeq L11;
+				L10:	sspush 27013;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload 4;
+					bspush 20;
+					smul;
+					sadd;
+					s2b;
+					baload;
+					bspush 16;
+					sand;
+					bspush 16;
+					if_scmpeq L13;
+				L12:	sspush 27013;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 7;
+					goto L17;
+				L14:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 7;
+					baload;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 7;
+					sadd;
+					sload 4;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					if_scmpeq L16;
+				L15:	sspush 27264;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	sinc 7 1;
+				L17:	sload 7;
+					sconst_3;
+					if_scmplt L14;
+				L18:	return;
+		}
+
+		.method private encryptUnderKek(Ljavacard/framework/APDU;)V {
+			.stack 6;
+			.locals 5;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 5;
+					getfield_b_this 2;		// boolean com/abnote/javacard/SAM/SAM.zmkLoadingLocked
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sload_3;
+					iflt L4;
+				L3:	sload_3;
+					bspush 6;
+					if_scmplt L5;
+				L4:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sload 4;
+					ifeq L7;
+				L6:	sspush 27270;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	sload 5;
+					bspush 16;
+					if_scmpeq L9;
+				L8:	sspush 26368;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					sload_3;
+					bspush 20;
+					smul;
+					sadd;
+					s2b;
+					baload;
+					sconst_2;
+					sand;
+					sconst_2;
+					if_scmpeq L11;
+				L10:	sspush 27013;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload_3;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					invokeinterface 3 14 5;		// javacard/security/DESKey
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 7;		// reference com/abnote/javacard/SAM/SAM.transientDESKey
+					sconst_2;
+					invokevirtual 56;		// javacardx/crypto/Cipher.init(Ljavacard/security/Key;B)V
+					getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getstatic_a 57;		// reference com/abnote/javacard/SAM/SAM.ZERO_8_ARRAY
+					sconst_0;
+					bspush 8;
+					getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					sconst_0;
+					sstore 6;
+					goto L15;
+				L12:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sload 6;
+					baload;
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					bspush 17;
+					sload 6;
+					sadd;
+					sload_3;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					baload;
+					if_scmpeq L14;
+				L13:	sspush 27264;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	sinc 6 1;
+				L15:	sload 6;
+					sconst_3;
+					if_scmplt L12;
+				L16:	getfield_a_this 9;		// reference com/abnote/javacard/SAM/SAM.cipherTDES_ECB
+					getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_1;
+					sload_3;
+					bspush 20;
+					smul;
+					s2b;
+					sadd;
+					s2b;
+					bspush 16;
+					aload_2;
+					sconst_0;
+					invokevirtual 58;		// javacardx/crypto/Cipher.doFinal([BSS[BS)S
+					pop;
+					aload_1;
+					sconst_0;
+					bspush 16;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method private getStatus(Ljavacard/framework/APDU;)V {
+			.stack 1;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	sspush 27135;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+		.method private verifyPIN(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					getfield_a_this 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					aload_2;
+					sconst_5;
+					sload_3;
+					s2b;
+					invokevirtual 59;		// javacard/framework/OwnerPIN.check([BSB)Z
+					ifne L2;
+				L1:	sspush 25344;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	return;
+		}
+
+		.method private updatePIN(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 50;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore 4;
+					getfield_a_this 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					invokevirtual 51;		// javacard/framework/OwnerPIN.isValidated()Z
+					ifne L2;
+				L1:	sspush 27010;
+					invokestatic 17;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 10;		// reference com/abnote/javacard/SAM/SAM.pin
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 22;		// javacard/framework/OwnerPIN.update([BSB)V
+					return;
+		}
+
+		.method private debug1(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+					sload_3;
+					bspush 16;
+					if_scmpne L2;
+				L1:	getfield_a_this 6;		// reference com/abnote/javacard/SAM/SAM.transientKeyStorage
+					sconst_0;
+					aload_2;
+					sconst_0;
+					bspush 120;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					bspush 120;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L5;
+				L2:	sload_3;
+					bspush 32;
+					if_scmpne L4;
+				L3:	getfield_a_this 11;		// reference com/abnote/javacard/SAM/SAM.zmkStorage
+					sconst_0;
+					aload_2;
+					sconst_0;
+					sspush 190;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					sspush 190;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L5;
+				L4:	getfield_a_this 5;		// reference com/abnote/javacard/SAM/SAM.transientTemporaryStorage
+					sconst_0;
+					aload_2;
+					sconst_0;
+					bspush 32;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					bspush 32;
+					invokevirtual 49;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+				L5:	return;
+		}
+
+		.method private xorArray([BS[BS[BSS)V {
+			.stack 6;
+			.locals 1;
+
+				L0:	aload_1;
+					sload_2;
+					aload 5;
+					sload 6;
+					sload 7;
+					invokestatic 21;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sconst_0;
+					sstore 8;
+					goto L2;
+				L1:	aload 5;
+					sload 6;
+					sload 8;
+					sadd;
+					aload 5;
+					sload 6;
+					sload 8;
+					sadd;
+					baload;
+					aload_3;
+					sload 4;
+					sload 8;
+					sadd;
+					baload;
+					sxor;
+					bastore;
+					sinc 8 1;
+				L2:	sload 8;
+					sload 7;
+					if_scmplt L1;
+				L3:	return;
+		}
+
+	}
+
+}

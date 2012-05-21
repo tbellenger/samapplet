@@ -1,0 +1,1 @@
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\obj\Debug\ResolveAssemblyReference.cache

@@ -1,0 +1,18 @@
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\bin\Release\ABNSAM.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\bin\Release\ABNSAM.pdb
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\bin\Release\Common.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\bin\Release\MonoPcsc.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\bin\Release\Common.pdb
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\bin\Release\MonoPcsc.pdb
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\obj\Release\ABNSAM.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\ABNSAM\obj\Release\ABNSAM.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\bin\Release\ABNSAM.dll
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\bin\Release\ABNSAM.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\bin\Release\ICSharpCode.SharpZipLib.dll
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\bin\Release\Common.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\bin\Release\MonoPcsc.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\obj\Release\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\obj\Release\ABNSAM.dll
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\ABNSAM\obj\Release\ABNSAM.pdb

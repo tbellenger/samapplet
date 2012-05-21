@@ -1,0 +1,13 @@
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Debug\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Debug\SAMManager.MainForm.resources
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Debug\SAMManager.Properties.Resources.resources
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Debug\GenerateResource.read.1.tlog
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Debug\GenerateResource.write.1.tlog
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Debug\SAMManager.exe
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Debug\SAMManager.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Debug\ABNSAM.dll
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Debug\ICSharpCode.SharpZipLib.dll
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Debug\ABNSAM.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Debug\Common.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Debug\SAMManager.exe
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Debug\SAMManager.pdb

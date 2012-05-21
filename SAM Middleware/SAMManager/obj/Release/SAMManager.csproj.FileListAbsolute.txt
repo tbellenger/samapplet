@@ -1,0 +1,31 @@
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\SAMManager.exe
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\SAMManager.pdb
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\ABNSAM.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\Common.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\MonoPcsc.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\ABNSAM.pdb
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\Common.pdb
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\bin\Release\MonoPcsc.pdb
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\obj\Release\SAMManager.MainForm.resources
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\obj\Release\SAMManager.Properties.Resources.resources
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\obj\Release\SAMManager.csproj.GenerateResource.Cache
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\obj\Release\SAMManager.exe
+C:\Documents and Settings\tbelleng.LEIGHMARDON\Documents\Projects\ABNSAM\SAMManager\obj\Release\SAMManager.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Release\SAMManager.exe
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Release\SAMManager.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Release\SAMManager.exe
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Release\SAMManager.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Release\ABNSAM.dll
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Release\ICSharpCode.SharpZipLib.dll
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Release\ABNSAM.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Release\Common.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\bin\Release\MonoPcsc.pdb
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Release\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Release\SAMManager.MainForm.resources
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Release\SAMManager.Properties.Resources.resources
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Release\GenerateResource.read.1.tlog
+\\vmware-host\Shared Folders\Desktop\ABNSAM\ABNSAM\SAMManager\obj\Release\GenerateResource.write.1.tlog
+C:\ABNSAM\SAM Middleware\SAMManager\obj\Release\SAMManager.exe
+C:\ABNSAM\SAM Middleware\SAMManager\obj\Release\SAMManager.pdb

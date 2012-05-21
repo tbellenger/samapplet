@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABNSAM", "ABNSAM\ABNSAM.csproj", "{EB6F07EC-CBE7-4135-BF9C-092B2D70D40B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAMManager", "SAMManager\SAMManager.csproj", "{DA2E57CF-F158-4A55-A415-8A2C8F425038}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB6F07EC-CBE7-4135-BF9C-092B2D70D40B} = {EB6F07EC-CBE7-4135-BF9C-092B2D70D40B}
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SAM Setup", "SAM Setup\SAM Setup.vdproj", "{7787DD39-B4AF-4643-88DD-3E234FA92B76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB6F07EC-CBE7-4135-BF9C-092B2D70D40B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB6F07EC-CBE7-4135-BF9C-092B2D70D40B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB6F07EC-CBE7-4135-BF9C-092B2D70D40B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB6F07EC-CBE7-4135-BF9C-092B2D70D40B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA2E57CF-F158-4A55-A415-8A2C8F425038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2E57CF-F158-4A55-A415-8A2C8F425038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2E57CF-F158-4A55-A415-8A2C8F425038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2E57CF-F158-4A55-A415-8A2C8F425038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7787DD39-B4AF-4643-88DD-3E234FA92B76}.Debug|Any CPU.ActiveCfg = Debug
+		{7787DD39-B4AF-4643-88DD-3E234FA92B76}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
